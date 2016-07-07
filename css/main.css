@@ -8,36 +8,101 @@ body, map {
         margin: 0;
         padding: 0;
       }
-      
-      #twoPhones{
-          
-      } 
-        
+              
       .iphone{
           width:400px;
           height:750px;
           background-color:#233;
           border-radius:  80px;
-          margin-top: 0;
           padding: 60px 25px 120px 25px;        
-          display: inline-block;
-        
+          display: inline-block;      
       }
-            
-       .iphone1
-       {
-           margin-left:200px;
-       }
-      
           
       .phoneInfo{
           height:100%;
           width:100%;
-          margin:20px 0 20px 0;
-          background-color: white;
-          padding:10px;
+          margin:0;
+          background-color: blue;
+          padding:0;          
           border-radius: 15px;
           border-color: black;
           border-width: 4px;
           border-style: solid;
       }
+      
+      .iphone1
+       {
+         margin-left: 16.66% !Important;  
+           
+       }
+       
+       #twoPhones{
+           margin-top: 25px;
+           margin-bottom: 20px;
+       }
+      
+       #latlng, #theTime{
+           font-size: 14px;
+           font-family: verdana;
+           font-weight: 500;
+           font-stretch: expanded;
+           padding:0;
+           margin:0;
+       }
+       #weatherLocation{
+           
+       }
+       
+       .general{
+          text-align: right;
+          height: 20%;
+          color: blueviolet;
+          padding: 0;
+          padding-right: 5px;
+          margin:-22px 0px 0px 0px;
+          background-color: bisque;          
+           border-top-left-radius: 15px;
+           border-top-right-radius: 15px;
+          }
+          
+          #specific{
+             padding:0 0 0 0 ;
+             height: 35%;
+             background-color: burlywood;  
+             font-weight: 900;
+          font-family:verdana;
+          color: white;                  
+          margin:0 0px 0 0px;
+                   }
+           
+       #temp{
+           font-size: 80px;
+           vertical-align:top;
+           text-align: right;
+           padding:0;       
+           margin-left: 0px;
+       }
+       
+       #unit1,  #unit2{
+           font-size: 36px;
+           font-style: normal;
+           font-family: monospace;
+           padding:0;
+           vertical-align: top;                   
+       }
+       
+       #weatherIcon{
+           vertical-align:middle;
+           text-align: center;
+           padding:5px;         
+           font-size: 80px;
+           font-family: verdana;
+       }
+       
+       #details{
+           background-color: peru;
+           height: 46%;
+           border-bottom-left-radius: 15px;
+           border-bottom-right-radius: 15px;
+           margin:0;
+                  }
