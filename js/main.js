@@ -6,47 +6,63 @@ function stringifyJSON(someHtml_Id, someJSONdata)
       var p = document.getElementById(someHtml_Id);
              p.innerHTML = JSON.stringify(someJSONdata).split(",").join(",<br>");
   }
+  
+  function displayDate()
+  {
+      var Days = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday" ];
+      var d = new Date();
+      var hr = ''; 
+      var min = '';
+                          if (d.getHours()<10) 
+                              hr =  "0"+ d.getHours(); 
+                          else 
+                              hr = d.getHours();
+                      
+                        if (d.getMinutes()<10) 
+                            min =  "0"+ d.getMinutes(); 
+                        else 
+                            min = d.getMinutes();
+                        
+     var time = document.getElementById("theTime");
+      time.innerHTML =  "<b>"+  Days[d.getDay()]+", "+hr+":"+min+"</b>";
+  }
     
 function displayLocation(data) 
 {
     var weatherLocation = document.getElementById("weatherLocation");
-    var locArr = data.results[0].formatted_address.split(',');
-    var str = locArr.join('<br>');
+    var str = data.results[0].formatted_address;
+    
     weatherLocation.innerHTML = str; 
     
 }
 
 function displayCoordinates(pos)
 {
-   var Lat = document.getElementById("latitude");
-   var Lon = document.getElementById("longitude");
-   var alt = document.getElementById("altitude");
+   var Lat = document.getElementById("latlng");
   
-    Lat.innerHTML += pos.coords.latitude;
-    Lon.innerHTML += pos.coords.longitude;
-    
-    if (pos.coords.altitude!==null)
-        alt.innerHTML += pos.coords.altitude;
-    else 
-        alt.innerHTML += "Altitude not evaluated...";
-  
+    Lat.innerHTML = "Lat:"+ pos.coords.latitude.toFixed(2) + "<sup>o</sup> &nbsp&nbsp&nbsp Long:"+ pos.coords.longitude.toFixed(2)+"<sup>o</sup>";
+     
 }
 
     
 function displayMap(pos)  // uses script: maps.googleapis.com/maps/api/js
 {
-        var map = new google.maps.Map( document.getElementById("map"), { center: {lat: pos.coords.latitude, lng: pos.coords.longitude},   zoom: 12  });
-        
+      var myCenter = {lat: pos.coords.latitude, lng: pos.coords.longitude};
+      var myMap = new google.maps.Map( document.getElementById("map"), { center:myCenter ,  scrollwheel:true,  zoom: 12  });
+      var myMarker = new google.maps.Marker({   map: myMap,    position: myCenter,    title: 'Ur close here'  });
+
 }
 
 function displayInformation(position) 
 {
-    displayCoordinates(position);
-   
+    displayCoordinates(position); //position returned from getLocation();
+    
+   //get the name of the place
     jQuery.getJSON("https://maps.googleapis.com/maps/api/geocode/json?latlng="+position.coords.latitude+","+position.coords.longitude+"&key=AIzaSyAmuPPhRj1fkH4bJ3ALbGxKh9xx57o9a2Y ", 
     function(data, textStatus, jqXHR)    //data, textStatus and jqXHR /xmlHTTPrequest returned by getJSON
     {
         displayLocation(data);
+        displayDate();
         displayMap(position);
         
    } ); //getJSON
