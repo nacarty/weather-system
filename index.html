@@ -1,59 +1,81 @@
-<!DOCTYPE html>
-<html>
-    <head>
-                  
- <title> NIGEL CARTY'S FREECODECAMP WEATHER PROJECT</title>
+<!DOCTYPE html> 
+<html> 
+ <head>                  
+<title> NIGEL CARTY'S FREECODECAMP WEATHER PROJECT</title> 
     
-<meta name="viewport" content="width=device-width, initial-scale=1"> 
+<meta name="viewport" content="width=device-width, initial-scale=1">  
+ <link rel="stylesheet" href="css/main.css"> 
+ 
+  <!-- The following  are for weatherIcons. They can be downloaded, or imported I guess-->
+   <!-- FONTS-->
+   <style>
+</style>
+      
+<!-- ICONS-->
+<link rel="stylesheet" href="https://github.com/erikflowers/weather-icons/blob/master/css/weather-icons-wind.css">
+<link rel="stylesheet" href=" https://github.com/erikflowers/weather-icons/blob/master/css/weather-icons-wind.min.css">
+<link rel="stylesheet" href="https://github.com/erikflowers/weather-icons/blob/master/css/weather-icons.css">
+<link rel="stylesheet" href="https://github.com/erikflowers/weather-icons/blob/master/css/weather-icons.min.css">
 
- <link rel="stylesheet" href="css/main.css">
+<!--  *****************END OF FONTS AND ICONS FROM WEATHERICON.IO ******************************-->
+  
 
-
- <!--The following two are for W3 CSS and the associated fa icons --> 
-<link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css">
-
-<script src="https://use.fontawesome.com/14c67ebfb3.js"></script> 
-
-<!-- Latest compiled and minified CSS --> 
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous"> 
-
-  <!-- Optional theme --> 
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous"> 
-<!-- Latest compiled and minified JavaScript --> 
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script> 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.0.0/jquery.min.js">
-  </script> 
-
-<script src="https://maps.googleapis.com/maps/api/js?key= AIzaSyAmuPPhRj1fkH4bJ3ALbGxKh9xx57o9a2Y"
-    async defer></script>
-    
-<script  src = "js/main.js"></script>
-<script>
-$(document).ready(getLocation);
-</script>
-     </head>
-     
-   <body>
-	   <div class = "container">
-                
-                <div id = "twoPhones" class = "row">
-                            <div class =" iphone iphone1 col-md-4">
-                                    <div class = "phoneInfo">
-                                        <div id = "weatherLocation"> </div>
-                                        <div id ="latlng">
-                                            <div id="latitude">Latitude: </div>
-                                            <div id="longitude">Longitude </div>
-                                             <div id="altitude">altitude: </div>
-                                        </div>
-                                    </div>
-                                </div>
-                       
-                          <div class ="iphone  iphone2 col-md-4">
-                            <div id = "map" class = "phoneInfo ">  </div>
-                        </div>
-                    
-                </div>
-		</div>
+ <!--The following two are for W3 CSS and the associated fa icons -->  
+<link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css"> 
+<script src="https://use.fontawesome.com/14c67ebfb3.js"></script>  
+<!-- Latest compiled and minified CSS -->  
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">  
+ <!-- Optional theme -->  
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">  
+<!-- Latest compiled and minified JavaScript -->  
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>  
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.0.0/jquery.min.js"> 
+</script>  
+<script src="https://maps.googleapis.com/maps/api/js?key= AIzaSyAmuPPhRj1fkH4bJ3ALbGxKh9xx57o9a2Y" 
+   async defer></script> 
    
-       </body>
-</html>
+      
+<script  src = "js/main.js"></script> 
+ <script> 
+ $(document).ready(getLocation); 
+ </script> 
+      </head> 
+       
+    <body> 
+          <div class = "container-fluid"> 
+              
+                 <div id = "twoPhones" class = "row"> 
+                             <div class =" iphone  iphone1 col-md-4"> 
+                               <div class ="phoneInfo">
+                                   
+                                     <div class = " general"> 
+                                             <h3 id = "weatherLocation"></h3>                                          
+                                             <p id ="latlng"></p>             
+                                             <p id = "theTime"></p>
+                                     </div>    
+                                  
+                                 
+                                  <div id ="specific" class="row" > 
+                                       <div id = "temp" class="col-sm-4" >28</div>
+                                       
+                                           <div  id = "unit1" class="col-sm-1">&deg;C</div>
+                                            <div id = "unit2" class="col-sm-1" >&deg;F</div>
+                                       
+                                       <div id = "weatherIcon" class="col-sm-4"><i class="wi wi-day-sunny"></i></div>
+                                   </div>
+                                   <div id="details">
+                                       whatever
+                                   </div>
+                               </div>                               
+                                                                               
+                           </div> 
+                         
+                           <div class ="iphone  iphone2 col-md-4"> 
+                             <div id = "map" class = "phoneInfo ">  </div> 
+                         </div> 
+                      
+                 </div> 
+                </div> 
+     
+        </body> 
+ </html> 
