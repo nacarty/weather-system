@@ -163,8 +163,8 @@ body, map {
            padding:0;
            vertical-align: top;        
             text-align: left;        
-            margin-left:32%;
-             height: 80px;
+            float:right;
+             height:75%;
              display:inline-block;
              width: 27px;
              
