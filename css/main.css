@@ -1,3 +1,6 @@
+@import url('https://cdnjs.cloudflare.com/ajax/libs/weather-icons/2.0.9/css/weather-icons-wind.min.css');
+@import url('https://cdnjs.cloudflare.com/ajax/libs/weather-icons/2.0.9/css/weather-icons.min.css');
+
 html{
     height:100%;
     margin: 0;
@@ -49,60 +52,314 @@ body, map {
            padding:0;
            margin:0;
        }
-       #weatherLocation{
-           
-       }
+       
+          #latlng{
+              padding-bottom: 12px;
+              text-align: center;
+          }
+          
+          #theTime{
+              padding:5px 0 5px 0; 
+              margin:0 30px 10px 30px;
+              color: darkseagreen;
+              text-align: center;
+              background-color: rgba(255,255,255,0.8);
+              border-radius: 20px;
+          }
        
        .general{
-          text-align: right;
+          text-align: center;
           height: 20%;
-          color: blueviolet;
+          color: chocolate;
+          font-weight: 900;
           padding: 0;
           padding-right: 5px;
-          margin:-22px 0px 0px 0px;
+          margin:-2px 0px 0px 0px;
           background-color: bisque;          
            border-top-left-radius: 15px;
            border-top-right-radius: 15px;
           }
+          #weatherLocation{
+              padding: 5px;
+              padding-bottom: 10px;
+              margin:0;
+              font-size: 15px;
+              
+          }
           
           #specific{
-             padding:0 0 0 0 ;
+             padding-top:7px;
              height: 35%;
-             background-color: burlywood;  
-             font-weight: 900;
-          font-family:verdana;
-          color: white;                  
-          margin:0 0px 0 0px;
+             background-color: burlywood;        
+             margin:0;
+                   }
+                   #twoThirdBox{
+                       padding: 0;
+                       margin:0;
+                   }
+                   #oneThirdBox{
+                       padding: 0;
+                       margin:0;                   
                    }
            
        #temp{
-           font-size: 80px;
+           font-size: 60px;
            vertical-align:top;
-           text-align: right;
-           padding:0;       
-           margin-left: 0px;
+           text-align:left;
+           padding:0 0 0 0;       
+            margin: 0px;
+            color:white;
+            font-weight:500;
+             display: inline-block;
+             font-family: "arial narrow";
        }
        
-       #unit1,  #unit2{
-           font-size: 36px;
-           font-style: normal;
-           font-family: monospace;
+       #feelsLike{
+           font-size: 20px;
+           padding:3px 0px 2px 3px;
+           color:white;
+           font-weight: 500;
+           
+       }
+       
+       #tempDiv{
+           background-color: inherit;
+           border:white solid 1px;
+           border-left-width: 1px;
+           border-top-width:3px;
+           border-right-width:1px;
+           border-radius: 12px;
+           margin:0px;
+           margin-left: 2px;
+           margin-right:3px;
+           padding:0 0 0 0;           
+           width:40%;
+              }
+       
+       #randomUnit{
+           font-size: 12px;
+           padding:2px 2px 2px 2px;
+            background-color: inherit;
+           border-radius: 3px;
+           color:black;
+           margin:0;
+       }
+       
+       #thermometer{
+           padding: 5px 0 0 0;
+           font-size:20px;
+           text-align: left;
+           margin:0;
+           vertical-align: top;
+           color:white;
+           background-color: inherit;
+           max-width: 15px;
+       }
+       
+       #units{
+           font-size: 40px;
+           color:white;
+           font-weight: 900;
            padding:0;
-           vertical-align: top;                   
+           vertical-align: top;        
+            text-align: left;        
+            margin-left:32%;
+             height: 80px;
+             display:inline-block;
+             width: 27px;
+             
+       }
+       
+       #unit2
+       {
+           display: none;
+       }
+       
+       #precipBox{
+            background-color: inherit;
+            text-align: center;
+            color:white;
+            padding:0 0 3px 0;
+            font-size: 16px;
+            font-weight: 500;             
+            border:white solid 1px;
+               border-top-width: 1px;
+                  border-right-width: 0px;
+                     border-bottom-width: 0px;
+                        border-left-width: 1px;
+           border-radius: 10px
+       }
+       
+        #pressureBox{
+            background-color: inherit;
+            text-align: center;
+            color:white;
+            padding:0 0 3px 0;
+            font-size: 16px;
+            font-weight: 500;   
+            border:white solid 1px;
+            border-top-width: 1px;
+                  border-right-width: 1px;
+                     border-bottom-width: 0px;
+                        border-left-width: 0px;
+           border-radius: 10px;
+       }
+         #windSpeedBox{
+            background-color: inherit;
+            text-align: center;
+            color:white;
+            padding:3px 0 0 0;
+            font-size: 16px;
+            font-weight: 500;           
+            border:white solid 1px;
+            border-top-width: 0px;
+                  border-right-width: 0px;
+                     border-bottom-width: 1px;
+                        border-left-width: 1px;
+           border-radius: 10px;
+       }
+       
+        #windDirectionBox{
+            background-color: inherit;
+            text-align: center;
+            color:white;
+            padding:3px 0 0 0;
+            font-size: 16px;
+            font-weight: 500;         
+            border:white solid 1px;
+            border-top-width: 0px;
+                  border-right-width: 1px;
+                     border-bottom-width: 1px;
+                        border-left-width: 0px;
+           border-radius: 10px;
+       }
+       
+       .wi-wind-direction, .wi-barometer, .wi-raindrop{
+           font-size:20px;
+       }
+       
+       #humidityRow{
+           padding-top: 15px;
+       }
+       
+        #humidityBox{
+            background-color: inherit;
+            text-align: center;
+            color:white;
+            padding:0;
+            font-size: 16px;
+            font-weight: 500;           
+            margin-left: 46px;
+            border:white solid 1px;
+            border-top-width: 1px;
+                  border-right-width: 0px;
+                     border-bottom-width: 1px;
+                        border-left-width: 1px;
+           border-radius:10px;
+       }
+       
+        #cloudCoverBox{
+            background-color: inherit;
+            text-align: center;
+            color:white;
+            padding:0;
+            font-size: 16px;
+            font-weight: 500;        
+            border:white solid 1px;
+            border-top-width: 1px;
+                  border-right-width: 0px;
+                     border-bottom-width: 1px;
+                        border-left-width: 0px;
+           border-radius: 10px;
+       }
+       
+        #visibilityBox{
+            background-color: inherit;
+            text-align: center;
+            color:white;
+            padding:0;
+            font-size: 16px;
+            font-weight: 500;           
+            border:white solid 1px;
+            border-top-width: 1px;
+                  border-right-width: 1px;
+                     border-bottom-width: 1px;
+                        border-left-width: 0px;
+           border-radius: 10px;
+       }
+       
+       #weatherIconBox{
+            padding: 3px 0 0 0;         
+           margin:0;
+           text-align: center;
+           vertical-align: top;
+           max-height: 160px;
        }
        
        #weatherIcon{
            vertical-align:middle;
-           text-align: center;
-           padding:5px;         
-           font-size: 80px;
-           font-family: verdana;
+           text-align: right;
+           padding:6px 0 6px 0;      
+           margin:0;
+           font-size: 90px;
+           color: white;
+           font-weight: bolder;
+           margin:0;
        }
        
-       #details{
+       #summary{
+           color:white;
+           text-align: center;
+           line-height: 14px;
+           padding:0 0 5px 0;
+           margin:0;
+           font-size: 12px;
+       }
+       #goLeft{
+           color:black;
+           float:left;
+           padding:2px;
+           margin:0 0 5px 15px;
+       }
+       #goRight{
+           color:black;
+           float:right;           
+           padding:2px;
+           margin:0 15px 5px 0;
+
+       }
+       
+       #dailyDetails{
            background-color: peru;
-           height: 46%;
+           height: 47%;
+           width:100%;
            border-bottom-left-radius: 15px;
            border-bottom-right-radius: 15px;
            margin:0;
+           display: inline-block;
+           text-align: center;
+           padding-right: 8px;
+           padding-left: 8px;
                   }
+                  
+            .tabular
+            {
+                display: table-cell;
+                padding: 1.5em 3px 3px 3px;
+                text-align: center;
+                font-size: 15px;
+                text-decoration: none;
+                margin:auto;
+                color:white;
+                font-weight: 600;
+                width: 100%;
+            }
+            
+            .tabular h5, .tabular h6{
+                border: white solid 1px;
+                border-radius: 3px;
+                padding-top: 4px;
+                padding-bottom: 2px;
+                }
+               
+        
