@@ -345,9 +345,9 @@ body, map {
             .tabular
             {
                 display: table-cell;
-                padding: 1.5em 3px 3px 3px;
+                padding: 1.5em 2px 3px 2px;
                 text-align: center;
-                font-size: 15px;
+                font-size: 14px;
                 text-decoration: none;
                 margin:auto;
                 color:white;
