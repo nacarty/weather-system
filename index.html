@@ -6,7 +6,10 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">  
  <link rel="stylesheet" href="css/main.css"> 
  
-
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/weather-icons/2.0.9/css/weather-icons-wind.css">
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/weather-icons/2.0.9/css/weather-icons-wind.min.css">
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/weather-icons/2.0.9/css/weather-icons.min.css">
+  
  <!--The following two are for W3 CSS and the associated fa icons -->  
 <link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css"> 
 <script src="https://use.fontawesome.com/14c67ebfb3.js"></script>  
@@ -29,40 +32,115 @@
       </head> 
        
     <body> 
-          <div class = "container-fluid"> 
+          <div class = "w3-container"> 
               
-                 <div id = "twoPhones" class = "row"> 
+                 <div id = "twoPhones" class = "w3-row"> 
                              <div class =" iphone  iphone1 col-md-4"> 
                                <div class ="phoneInfo">
                                    
                                      <div class = " general"> 
-                                             <h3 id = "weatherLocation"></h3>                                          
+                                             <h3 id = "weatherLocation">INTERNET UNAVAILABLE. VALUES INCORRECT</h3>                                          
                                              <p id ="latlng"></p>             
                                              <p id = "theTime"></p>
                                      </div>    
                                   
                                  
-                                  <div id ="specific" class="row" > 
-                                       <div id = "temp" class="col-sm-4" >28</div>
-                                       
-                                           <div  id = "unit1" class="col-sm-1">&deg;C</div>
-                                            <div id = "unit2" class="col-sm-1" >&deg;F</div>
-                                       
-                                       <div id = "weatherIcon" class="col-sm-4"><i class="wi wi-day-sunny"></i></div>
-                                   </div>
-                                   <div id="details">
-                                       whatever
-                                   </div>
-                               </div>                               
-                                                                               
-                           </div> 
+                                  <div id ="specific" class="w3-row" > 
+                                       <div  id ="twoThirdBox" class="w3-twothird" >
+                                            <div id ="tempRow" class ="w3-row">
+                                                <div id = "tempDiv" class ="w3-half w3-container">
+                                                <div id = "thermometer" class="w3-col w3-container">
+                                                     <i class = ' wi wi-thermometer' ></i>
+                                                 </div>
+                                                 <div  id = "tempBox" class = "w3-quarter">
+                                                     <i id = "temp"> 45</i>
+                                                     <i id = "feelsLike" class = "fa fa-user-plus w3-col">&nbsp;30&deg;</i>
+                                                 </div>        
+                                                 <div id = "units"  class = "w3-rest">
+                                                            <i  id = "unit1" class = " wi wi-celsius" >
+                                                            <button id = "randomUnit" class = "glyphicon glyphicon-random" onclick="toggleTemperature()" ></button>
+                                                            </i>
+                                                            <i  id = "unit2" class = "wi wi-fahrenheit" ></i>                                                           
+                                                 </div>
+                                                    
+                                                </div>
+                                                
+                                                <div id ="precipBox"  class = "w3-quarter">
+                                                    <div id="precipSymbol" class="w3-row">
+                                                        <i  class = ' wi wi-raindrop' ></i>
+                                                    </div>
+                                                     <div id="precipAmt" class="w3-row">                                                  
+                                                            0.35
+                                                     </div>
+                                                 </div>
+                                                 <div id ="pressureBox"  class = "w3-quarter">
+                                                    <div id="barometer" class="w3-row">
+                                                        <i  class = ' wi wi-barometer' ></i>
+                                                    </div>
+                                                     <div id="pressureAmt" class="w3-row">                                                  
+                                                            1015
+                                                     </div>
+                                                 </div>
+                                                <div id ="windSpeedBox"  class = "w3-quarter">
+                                                    <div id="wind" class="w3-row">
+                                                        <i  class = ' wi wi-strong-wind' ></i>
+                                                    </div>
+                                                     <div id="windSpeed" class="w3-row">                                                  
+                                                            45
+                                                     </div>
+                                                 </div>
+                                                <div id ="windDirectionBox"  class = "w3-quarter">
+                                                    <div id="windDirection" class="w3-row">
+                                                        <i  class = 'wi wi-wind-direction' ></i>
+                                                    </div>
+                                                     <div id="theDirection" class="w3-row">                                                  
+                                                            1015
+                                                     </div>
+                                                 </div>
+                                            </div>
+                                           
+                                           <div id ="humidityRow" class ="w3-row">
+                                               <div id = "humidityBox" class ="w3-quarter">
+                                                   <div id = "humidityIcon" class ="w3-row"><i class = "wi wi-humidity"></i></div>
+                                                   <div id ="humidity" class ="w3-row">10%</div>                                                   
+                                               </div>
+                                               
+                                                <div id = "cloudCoverBox" class ="w3-quarter">
+                                                    <div class ="w3-row"><i class = "wi wi-cloud"></i></div>
+                                                   <div id = "cloudCover" class ="w3-row">45%</div>                                                   
+                                               </div>    
+                                               
+                                               <div id = "visibilityBox" class ="w3-quarter">
+                                                   <div class ="w3-row"><i class = "fa fa-binoculars"></i></div>
+                                                   <div id = "visibility" class ="w3-row">95%</div>                                                   
+                                               </div>
+                                           </div>                                            
+                                </div>
+                                  
+                                      
+                                <div id = "weatherIconBox" class="w3-third w3-container" >
+                                    <i id = "weatherIcon"><i class="wi wi-day-sunny"></i></i>
+                                    <div>
+                                                 <div id ='summary'>summary</div>
+                                                 <button id = 'goLeft'   onclick = "displayInformation(-1)"> <i class = "fa fa-arrow-left"></i></button>
+                                                 <button id = 'goRight'  onclick = "displayInformation(1)"> <i class = "fa fa-arrow-right"></i></button>
+                                    </div>
+                                 </div>
+                        </div>            
+                                      
+                        <div id="dailyDetails"> </div>
+                                   
+                    </div>              
+           </div> 
+                                                              
+            <div class ="iphone  iphone2 col-md-4"> 
+                             <div id = "map" class = "phoneInfo ">
+                                 The map goes here...
+                             </div> 
+            </div>                                                                  
                          
-                           <div class ="iphone  iphone2 col-md-4"> 
-                             <div id = "map" class = "phoneInfo ">  </div> 
-                         </div> 
-                      
-                 </div> 
-                </div> 
+          </div> 
+        </div>                     
      
         </body> 
  </html> 
