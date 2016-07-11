@@ -113,7 +113,7 @@ function displayMap(pos)  // uses script: maps.googleapis.com/maps/api/js
       '<div id="FCC-weathermap-challenge-note"></div>'+
       '<h5 style = "color:darkseagreen">'+globalFormattedAddress+'</h5>'+
       '<div id="bodyContent">'+
-     ' <h6>You are near Latitude '+Lat+'&deg; and Longitiude'+Lon+'&deg;.</h6>'+
+     ' <h6>You are near Latitude '+Lat+'&deg; and Longitiude '+Lon+'&deg;.</h6>'+
       '<p><b>At this time - '+globalDateString+' - </b>the temperature is <b>'+t+' </b>, and it sure feels like ' +f+
       ' around here. </p>'+
       '<p>Whatever you do, enjoy the outdoors and be careful!</p></div></div>';
@@ -407,7 +407,7 @@ function theMoon(m)
           moon = theMoon(d[i].moonPhase);
           windSp = Math.round(d[i].windSpeed*3.6).toString()+'kh';
                  
-      HTMLstr[i+1]   =   "<div class = 'tabular'><h5   style = 'color: darkseagreen; font-weight:900'>"+day+"</h5><h5><i class = 'wi "+icon+ "'></i></h5><h6>"
+      HTMLstr[i+1]   =   "<div class = 'tabular'><h5   style = 'color: darkseagreen; font-size:12px; font-weight:900'>"+day+"</h5><h5><i class = 'wi "+icon+ "'></i></h5><h6>"
               + tMax +"</h5><h6>"+ tMin+"</h6><h5>"
               + windSp+"</h6><h5><i class = 'wi "+moon+ "'></i></h5></div> ";   
       }
