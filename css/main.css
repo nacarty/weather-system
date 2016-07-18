@@ -134,16 +134,16 @@ body, map {
            border-top-width:3px;
            border-right-width:1px;
            border-radius: 12px;
-           margin:0px;
-           margin-left: 1px;
-           margin-right:2px;
+           margin:1px;
+           margin-left: 2px;
+           margin-right:3px;
            padding:0 0 0 0;         
           
               }
        
        #randomUnit{
            font-size: 12px;
-           padding:2px 0px 2px 0px;
+           padding:2px 3px 2px 3px;
             background-color: inherit;
            border-radius: 3px;
            color:white;
@@ -171,7 +171,6 @@ body, map {
             margin-left:32%;
              height: 80px;
              display:inline-block;
-             width: 27px;
              background-color: inherit;
        }
        
