@@ -96,10 +96,13 @@ body, map {
                    #twoThirdBox{
                        padding: 0;
                        margin:0;
+					   background-color:red;
                    }
                    #oneThirdBox{
                        padding: 0;
-                       margin:0;                   
+                       margin:0;  
+					   background-color: yellow;
+					   
                    }
            
        #temp{
@@ -112,6 +115,7 @@ body, map {
             font-weight:500;
              display: inline-block;
              font-family: "arial narrow";
+			 background-color: blue;
        }
        
        #feelsLike{
@@ -119,11 +123,12 @@ body, map {
            padding:3px 0px 2px 3px;
            color:white;
            font-weight: 500;
+		   background-color: purple;
            
        }
        
        #tempDiv{
-           background-color: inherit;
+           background-color:black;
            border:white solid 1px;
            border-left-width: 1px;
            border-top-width:3px;
@@ -139,7 +144,7 @@ body, map {
        #randomUnit{
            font-size: 12px;
            padding:2px 2px 2px 2px;
-            background-color: inherit;
+            background-color: teal;
            border-radius: 3px;
            color:black;
            margin:0;
@@ -167,7 +172,7 @@ body, map {
              height: 80px;
              display:inline-block;
              width: 27px;
-             
+             background-color: orange;
        }
        
        #unit2
