@@ -138,7 +138,7 @@ body, map {
            margin-left: 2px;
            margin-right:3px;
            padding:0 0 0 0;           
-           /*width:40%; */
+          
               }
        
        #randomUnit{
@@ -184,7 +184,7 @@ body, map {
             background-color: inherit;
             text-align: center;
             color:white;
-            padding:0 0 3px 0;
+            padding:3px 0 3px 0;
             font-size: 16px;
             font-weight: 500;             
             border:white solid 1px;
@@ -199,7 +199,7 @@ body, map {
             background-color: inherit;
             text-align: center;
             color:white;
-            padding:0 0 3px 0;
+            padding:3px 0 3px 0;
             font-size: 16px;
             font-weight: 500;   
             border:white solid 1px;
