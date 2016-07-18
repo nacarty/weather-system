@@ -162,6 +162,7 @@ body, map {
        }
        
        #units{
+		   width: 20px;
            font-size: 40px;
            color:white;
            font-weight: 900;
