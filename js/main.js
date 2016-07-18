@@ -19,7 +19,7 @@ var globalFormattedAddress ='';
 
 function stringifyJSON(someHtml_Id, someJSONdata)
 {
-      var p = document.getElementById(someHtml_Id);
+     var p = document.getElementById(someHtml_Id);
              p.innerHTML = JSON.stringify(someJSONdata).split(",").join(",<br>");
   }
   
@@ -36,7 +36,7 @@ function stringifyJSON(someHtml_Id, someJSONdata)
    
 function toggleTemperature()     
 {  
-     var d = document.getElementById("unit1");
+     var d = $("#unit1");
      
      toCelsius = !(toCelsius);
      
@@ -64,27 +64,25 @@ function toggleTemperature()
 
 function displayLocation(data) 
 {
-    var weatherLocation = document.getElementById("weatherLocation");
     globalFormattedAddress = data.results[1].formatted_address;
     
-    weatherLocation.innerHTML = globalFormattedAddress; 
+    $("#weatherLocation").empty().append(globalFormattedAddress); 
     
 }
 
 function displayCoordinates(pos)
 {
-   var Latlng = document.getElementById("latlng");
    Lat = pos.coords.latitude.toFixed(2);
    Lon =  pos.coords.longitude.toFixed(2);
   
-    Latlng.innerHTML = "Lat:"+ Lat + "<sup>o</sup> &nbsp&nbsp&nbsp Long:"+ Lon +"<sup>o</sup>";
+    $("#latlng").empty().append("Lat:"+ Lat + "<sup>o</sup> &nbsp&nbsp&nbsp Long:"+ Lon +"<sup>o</sup>");
     
  }
 
     
 function displayMap(pos)  // uses script: maps.googleapis.com/maps/api/js
 {
-    
+    //document.getElementById("map")
       myCenter = {lat: pos.coords.latitude, lng: pos.coords.longitude};
       myMap = new google.maps.Map( document.getElementById("map"), { center:myCenter ,  scrollwheel:true,  zoom: 12  });
       
@@ -95,7 +93,7 @@ function displayMap(pos)  // uses script: maps.googleapis.com/maps/api/js
      var t;
      var f;
      
-      document.getElementById("summary").innerHTML = s;     
+      $("#summary").empty().append(s);     
       myMarker = new google.maps.Marker({map:myMap, position: myCenter});
       
       
@@ -136,8 +134,7 @@ function displayMap(pos)  // uses script: maps.googleapis.com/maps/api/js
       var Months = ["January","February", "March", "April", "May", "June","July","August", "September","October","November","December"];
       globalDateString = Days[dayPart]+" "+Months[monthPart]+" "+ datePart+",  "+d.getFullYear()+", "+timePart;
                         
-     var time = document.getElementById("theTime");
-      time.innerHTML =  "<b>"+ globalDateString +"</b>";
+     $("#theTime").empty().append( "<b>"+ globalDateString +"</b>");
   }
   
     
@@ -151,47 +148,47 @@ function displayMap(pos)  // uses script: maps.googleapis.com/maps/api/js
           feel = globalFeelLikeF;
       }
       
-      document.getElementById("temp").innerHTML=temp;
-      document.getElementById("feelsLike").innerHTML= "&nbsp;"+feel+"&deg;";      
+      $("#temp").empty().append(temp);
+      $("#feelsLike").empty().append("&nbsp;"+feel+"&deg;");      
       
     }
     
   
   function  displayPrecipitation(p)
   {
-      document.getElementById("precipAmt").innerHTML=  Math.round(p)+"mm";
+      $("precipAmt").empty().append(Math.round(p)+"mm");
       
   }  
   
    function  displayPressure(p)
   {
-      document.getElementById("pressureAmt").innerHTML=  p.toFixed(0);
+      $("#pressureAmt").empty().append(p.toFixed(0));
       
   }
   
   function  displayWindSpeed(w)
   {
-      document.getElementById("windSpeed").innerHTML =  Math.round(w*3.6).toString() +"kmh";     
+      $("#windSpeed").empty().append(Math.round(w*3.6).toString() +"kmh");     
   }
 
 function  displayWindDirection(d)
   {
-      document.getElementById("theDirection").innerHTML = d.toString() +"&deg;";     
+      $("#theDirection").empty().append(d.toString() +"&deg;");     
   }
   
   function  displayHumidity(h)
   {
-      document.getElementById("humidity").innerHTML =Math.round(h*100) +"&#37;";     
+      $("#humidity").empty().append(Math.round(h*100) +"&#37;");     
   }
 
 function displayCloudCover(c)
  {
-      document.getElementById("cloudCover").innerHTML =Math.round(c*100) +"&#37;";     
+      $("#cloudCover").empty().append(Math.round(c*100) +"&#37;");     
   }
   
 function displayVisibility(v)
  {
-      document.getElementById("visibility").innerHTML = Math.round(v).toString() +"km";     
+      $("#visibility").empty().append(Math.round(v).toString() +"km");     
   }
   
 function displayIcon(icn, callType)
@@ -249,7 +246,7 @@ function displayIcon(icn, callType)
   to use the function in different ways. The function is called by displayInformation(0) as well as displayDailyInfo(1)*/
                                                                 
  if (callType === 0)
-     document.getElementById("weatherIcon").innerHTML = '<i class="wi '+icon+' "></i>';
+     $("#weatherIcon").empty().append('<i class="wi '+icon+' "></i>');
   else
        return icon;
   }
@@ -393,26 +390,19 @@ function theMoon(m)
           
       var d = globalWeatherData.daily.data;
       var len = d.length;
-      var day, icon, tMax, tMin, windSp, moon;
-      var bla = 'class';
+   
       
    HTMLstr[0] = "<div class = 'tabular'  style = 'color: darkseagreen; font-weight:900'><h5 ><i class = 'fa fa-calendar'></i></h5><h5><i class = 'fa fa-info-circle'></i></h5> <h5><i class = 'wi wi-thermometer'></i>-Mx</h5><h6><i class = 'wi wi-thermometer-exterior'></i>-Mn</h6><h6><i class = 'wi wi-strong-wind'></i></h6><h5><i class = 'wi wi-moon-full' ></i></h5></div> ";
   
    for (var i = 0; i < len ; i++)
-      {
-          day = theDay(d[i].time);
-          icon = displayIcon(d[i].icon, 1);
-          tMax =  theTemp(d[i].temperatureMax, unit);
-          tMin = theTemp(d[i].temperatureMin, unit);
-          moon = theMoon(d[i].moonPhase);
-          windSp = Math.round(d[i].windSpeed*3.6).toString()+'kh';
-                 
-      HTMLstr[i+1]   =   "<div class = 'tabular'><h5   style = 'color: darkseagreen; font-weight:900'>"+day+"</h5><h5><i class = 'wi "+icon+ "'></i></h5><h6>"
-              + tMax +"</h5><h6>"+ tMin+"</h6><h5>"
-              + windSp+"</h6><h5><i class = 'wi "+moon+ "'></i></h5></div> ";   
+      {                 
+      HTMLstr[i+1]   =   "<div class = 'tabular'><h5   style = 'color: darkseagreen; font-weight:900'>"+theDay(d[i].time)+"</h5><h5><i class = 'wi "+
+              displayIcon(d[i].icon, 1)+ "'></i></h5><h6>"+
+                theTemp(d[i].temperatureMax, unit)+"</h5><h6>"+theTemp(d[i].temperatureMin, unit)+"</h6><h5>"
+              +Math.round(d[i].windSpeed*3.6).toString()+'kh'+"</h6><h5><i class = 'wi "+theMoon(d[i].moonPhase)+ "'></i></h5></div> ";   
       }
       
-            document.getElementById("dailyDetails").innerHTML = HTMLstr.join("");
+            $("#dailyDetails").empty().append(HTMLstr.join(""));
    }
 
 function retrieveInformation(position) 
@@ -447,9 +437,11 @@ function retrieveInformation(position)
 
 function onError(err)
 {
-    var loc = document.getElementById("weatherLocation");
-    loc.innerHTML = "There was an error<br>Error Code:"+err.code+"<br>"+err.message;
+    $("#weatherLocation").empty().append("There was an error<br>Error Code:"+err.code+"<br>"+err.message);
 }
+
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 function getLocation()  //see your implementation of getLocation() on codepen.io. geolocation does not work in Chrome 5.0 or higher if not secure.
 {
@@ -458,12 +450,38 @@ function getLocation()  //see your implementation of getLocation() on codepen.io
     
     if (navigator.geolocation) 
     {
-        navigator.geolocation.getCurrentPosition(retrieveInformation); //can also take arguments "error" and "options = positionOptions"
+        //getCurrentPosition() can also take an argument like the positionOptions object above
+        navigator.geolocation.getCurrentPosition(retrieveInformation, getAlternativeLocation ); //can also take arguments "error" and "options = positionOptions"
     } 
-    else 
+    else  //alternatively, you may use ip-api.com
     {
-       Lat.innerHTML = "Geolocation is not supported by this browser.";
+       onError("Geolocation is not supported by this browser. Hold on...");
+       getAlternativeLocation({'code':'Browser' , 'message':'Geolocation not supported'});       
     }
 }
 
-//getLocation(); called in the HTML file via script
+function getAlternativeLocation(err)
+{
+   onError('Geolocation error: ('+err.code+ ') '+err.message);
+  
+    var position = {'coords':{'latitude':0, 'longitude':0}};
+  
+    $.getJSON("http://ip-api.com/json/?callback=?", 
+     function(data)
+     { 
+      
+         if (data.status === "success")
+         {
+          position.coords.latitude = data.lat;
+         position.coords.longitude = data.lon;
+           
+
+         retrieveInformation(position);
+         }
+
+         else
+           onError(data.message);
+
+    }
+  );
+}
