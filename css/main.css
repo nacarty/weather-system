@@ -134,7 +134,6 @@ body, map {
            border-top-width:3px;
            border-right-width:1px;
            border-radius: 12px;
-           margin:1px;
            margin-left: 2px;
            margin-right:3px;
            padding:0 0 0 0;  
@@ -170,7 +169,7 @@ body, map {
            padding:0;
            vertical-align: top;        
             text-align: left;        
-            margin-left:12%;
+            margin-left:24%;
 			margin-right: 0;
              height: 80px;
              display:inline-block;
@@ -186,7 +185,7 @@ body, map {
             background-color: inherit;
             text-align: center;
             color:white;
-            padding:0 0 3px 0;
+            padding:2px 0 3px 0;
             font-size: 16px;
             font-weight: 500;             
             border:white solid 1px;
@@ -201,7 +200,7 @@ body, map {
             background-color: inherit;
             text-align: center;
             color:white;
-            padding:0 0 3px 0;
+            padding:2px 0 3px 0;
             font-size: 16px;
             font-weight: 500;   
             border:white solid 1px;
@@ -215,7 +214,7 @@ body, map {
             background-color: inherit;
             text-align: center;
             color:white;
-            padding:3px 0 0 0;
+            padding:3px 0 2px 0;
             font-size: 16px;
             font-weight: 500;           
             border:white solid 1px;
@@ -230,7 +229,7 @@ body, map {
             background-color: inherit;
             text-align: center;
             color:white;
-            padding:3px 0 0 0;
+            padding:3px 0 2px 0;
             font-size: 16px;
             font-weight: 500;         
             border:white solid 1px;
@@ -256,7 +255,7 @@ body, map {
             padding:0;
             font-size: 16px;
             font-weight: 500;           
-            margin-left: 46px;
+            margin-left: 52px;
             border:white solid 1px;
             border-top-width: 1px;
                   border-right-width: 0px;
