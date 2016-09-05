@@ -392,7 +392,7 @@ function theMoon(m)
       var len = d.length;
    
       
-   HTMLstr[0] = "<div class = 'tabular'  style = 'color: darkseagreen; font-weight:900'><h5 ><i class = 'fa fa-calendar'></i></h5><h5><i class = 'fa fa-info-circle'></i></h5> <h5><i class = 'wi wi-thermometer'></i>-Mx</h5><h6><i class = 'wi wi-thermometer-exterior'></i>-Mn</h6><h6><i class = 'wi wi-strong-wind'></i></h6><h5><i class = 'wi wi-moon-full' ></i></h5></div> ";
+   HTMLstr[0] = "<div class = 'tabular'  style = 'color: darkseagreen; font-weight:900'><h5 ><i class = 'fa fa-calendar'></i></h5><h5><i class = 'fa fa-info-circle'></i></h5> <h5><i class = 'wi wi-thermometer'></i><i class = 'fa fa-long-arrow-up'></i></h5><h6><i class = 'wi wi-thermometer-exterior'></i><i class = 'fa fa-long-arrow-down'></i></h6><h6><i class = 'wi wi-strong-wind'></i></h6><h5><i class = 'wi wi-moon-full' ></i></h5></div> ";
   
    for (var i = 0; i < len ; i++)
       {                 
