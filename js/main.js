@@ -64,10 +64,14 @@ function toggleTemperature()
 
 function displayLocation(data) 
 {
-    globalFormattedAddress = data.results[1].formatted_address;
-    
-    $("#weatherLocation").empty().append(globalFormattedAddress); 
-    
+    if (data.results[1])
+       globalFormattedAddress = data.results[1].formatted_address;
+    else if (data.results[0])
+        globalFormattedAddress = data.results[0].formatted_address;
+    else 
+        globalFormattedAddress = 'Unidentified Place';
+
+    $("#weatherLocation").empty().append(globalFormattedAddress);     
 }
 
 function displayCoordinates(pos)
